@@ -31,6 +31,13 @@ export function parseMarkdownToADF(
 function processADF(adf: JSONDocNode, confluenceBaseUrl: string): JSONDocNode {
 	const olivia = traverse(adf, {
 		text: (node, _parent) => {
+			if (_parent.parent?.node?.type == "listItem" && node.text) {
+				node.text = node.text
+					.replaceAll(/^\[[xX]\]/g, "✅")
+					.replaceAll(/^\[[ ]\]/g, "🔲")
+					.replaceAll(/^\[[*]\]/g, "⭐️");
+			}
+
 			if (
 				!(
 					node.marks &&
@@ -40,7 +47,7 @@ function processADF(adf: JSONDocNode, confluenceBaseUrl: string): JSONDocNode {
 					"href" in node.marks[0].attrs
 				)
 			) {
-				return;
+				return node;
 			}
 
 			if (
