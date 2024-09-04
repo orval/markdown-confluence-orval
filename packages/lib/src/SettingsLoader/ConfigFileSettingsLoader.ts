@@ -45,14 +45,18 @@ export class ConfigFileSettingsLoader extends SettingsLoader {
 			});
 			const config = JSON.parse(configData);
 
-			const result: Partial<ConfluenceSettings> = {};
+			let result: Partial<ConfluenceSettings> = {};
 
 			for (const key in DEFAULT_SETTINGS) {
 				if (Object.prototype.hasOwnProperty.call(config, key)) {
 					const propertyKey = key as keyof ConfluenceSettings;
 					const element = config[propertyKey];
 					if (element) {
-						result[propertyKey] = element;
+						// result[propertyKey] = element;
+						result = {
+							...result,
+							[propertyKey]: element,
+						};
 					}
 				}
 			}

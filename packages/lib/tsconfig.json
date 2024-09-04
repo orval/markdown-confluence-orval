@@ -8,7 +8,7 @@
     "emitDeclarationOnly": false,
     "skipLibCheck": true,
     "listEmittedFiles": true,
-    "module":"ESNext",
+    "module":"NodeNext",
     "target":"ESNext",
   },
   "include":[ "**/*.ts", "**/*.tsx", "**/**.js", "**/**.jsx", ],

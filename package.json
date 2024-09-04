@@ -12,29 +12,23 @@
       "test": "npm test -ws --if-present"
    },
    "devDependencies": {
-      "@types/node": "^16.11.6",
-      "@typescript-eslint/eslint-plugin": "^6.3.0",
-      "@typescript-eslint/parser": "^6.3.0",
-      "builtin-modules": "3.3.0",
-      "esbuild": "0.18.14",
+      "@types/node": "^22.5.3",
+      "@typescript-eslint/eslint-plugin": "^8.4.0",
+      "builtin-modules": "4.0.0",
+      "esbuild": "0.23.1",
       "esbuild-node-externals": "^1.8.0",
       "esbuild-plugin-copy": "^2.1.1",
-      "eslint": "^8.46.0",
+      "eslint": "^9.9.1",
       "eslint-config-prettier": "^9.0.0",
-      "husky": "^8.0.3",
-      "lint-staged": "13.2.3",
-      "prettier": "3.0.0",
+      "lint-staged": "15.2.10",
+      "prettier": "3.3.3",
       "ts-jest": "^29.1.1",
       "ts-node": "^10.9.1",
-      "tslib": "2.5.0",
+      "tslib": "2.7.0",
       "typescript": "^5.1.6"
    },
    "workspaces": [
-      "packages/lib",
-      "packages/mermaid-electron-renderer",
-      "packages/mermaid-puppeteer-renderer",
-      "packages/cli",
-      "packages/obsidian"
+      "packages/lib"
    ],
    "lint-staged": {
       "packages/**/*.ts": "prettier --write"
